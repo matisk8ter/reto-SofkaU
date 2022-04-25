@@ -23,7 +23,7 @@ export class UI {
         const quizEndHTML = `
             <h1>Resultado</h1>
             <h2>Tu Score: ${score}</h2>
-            <a href="https://matisk8ter.github.io/reto-SofkaU/">Jugar</a>
+            <a href="index.html">Jugar</a>
         `
         const element = document.getElementById('quiz');
         element.innerHTML = quizEndHTML;

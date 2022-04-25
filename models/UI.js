@@ -17,7 +17,7 @@ export class UI {
             button.className = "button";
             button.innerText = opc[i];
             choicesContainer.append(button);
-        } 
+        }
     }
     mostrarScore(score) {
         const quizEndHTML = `
@@ -33,7 +33,15 @@ export class UI {
         let claveUser = JSON.parse(localStorage.getItem('objJugador'));
         let desocultar = document.getElementById("tabla");
         let mostrar = document.getElementById("contTabla");
-        let arrOrdenado = claveUser.sort((a, b) => {(a.score > b.score)});
+        let arrOrdenado = claveUser.sort((a, b) => { 
+            if (a.score > b.score){
+                return -1;
+            }else if(a.score < b.score){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
         desocultar.style = "display: inline-block";
         for (let i = 0; i <= arrOrdenado.length; i++) {
             let contentToHappend = `
@@ -41,5 +49,5 @@ export class UI {
             mostrar.innerHTML += contentToHappend;
         };
     };
-   
+
 }

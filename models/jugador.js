@@ -15,7 +15,7 @@ export class Jugador {
         let arrPuntos = JSON.parse(localStorage.getItem('objJugador'));
         const player = {
             nombre: this.nombre,
-            score: this.score
+            score: this.score,
         }
         arrPuntos.push(player);
         localStorage.setItem('objJugador', JSON.stringify(arrPuntos));

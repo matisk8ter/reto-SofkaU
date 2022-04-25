@@ -5,8 +5,10 @@ import { UI } from "./models/UI.js";
 import { arregloRandom } from "./data/questions.js"
 import { Jugador } from "./models/jugador.js";
 
+
+
 const renderPage = (quiz, ui) => {
-    
+
     if (quiz.isEnded()) {
         ui.mostrarScore(quiz.score);
         const scoreP = quiz.score;
@@ -22,6 +24,7 @@ const renderPage = (quiz, ui) => {
             quiz.validacion(currentChoice);
             renderPage(quiz, ui);
         });
+
     }
 };
 function main() {
@@ -29,6 +32,7 @@ function main() {
     const quiz = new Quiz(dataRandom);
     const ui = new UI();
     renderPage(quiz, ui);
+
 }
 
 main();

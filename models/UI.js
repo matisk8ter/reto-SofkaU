@@ -23,7 +23,7 @@ export class UI {
         const quizEndHTML = `
             <h1>Resultado</h1>
             <h2>Tu Score: ${score}</h2>
-            <button onclick="location.href='https://matisk8ter.github.io/reto-SofkaU/'">Jugar</button>
+            <button onclick="location.href='https://matisk8ter.github.io/reto-SofkaU/'">Volver a Jugar</button>
         `
         const element = document.getElementById('quiz');
         element.innerHTML = quizEndHTML;

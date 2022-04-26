@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(#fff, rgb(77, 128, 147));
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,6 +72,10 @@ h1,h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: left;
     overflow: hidden;
+    
+}
+#tabla ol {
+    padding-left: 4rem;
 }
 #tabla h2{
     color: rgb(4, 4, 154);

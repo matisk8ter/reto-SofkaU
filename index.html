@@ -11,23 +11,24 @@
     <title>Reto SofkaU</title>
 
 </head>
- 
+
 <body>
     <div class="mt-5">
         <div id="quiz" class="col-12">
             <h1>Reto SofkaU</h1>
+            <p id="progress"></p>
+            <p>puntos actuales</p>
+            <p id="scoreActual"></p>
             <div id="puntos"></div>
             <hr>
             <h2 id="question"></h2>
-
             <div id="choices"></div>
-            <footer>
-                <p id="progress"></p>
-            </footer>
+            <button id="salir" >Salir</button>
         </div>
-        <div id="tabla" ; style="display: none;" class="col-12">
+        <div id="tabla" style="display: none;" class="col-12">
             <h2>Tabla de Clasificación</h2>
-            <ul id="contTabla"></ul>
+            <ol id="contTabla">
+            </ol>
         </div>
     </div>
     <script src="app.js" type="module"></script>

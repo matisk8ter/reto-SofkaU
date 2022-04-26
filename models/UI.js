@@ -1,4 +1,5 @@
 
+
 export class UI {
     constructor() { }
 
@@ -18,7 +19,17 @@ export class UI {
             button.innerText = opc[i];
             choicesContainer.append(button);
         }
+
     }
+    mostrarNivel(nivel) {
+        document.getElementById("progress").innerHTML = `nivel de dificultad: ${nivel}`
+    }
+    puntos(score) {
+        document.getElementById("scoreActual").innerHTML = score;
+    }
+
+    
+
     mostrarScore(score) {
         const quizEndHTML = `
             <h1>Resultado</h1>
@@ -33,19 +44,19 @@ export class UI {
         let claveUser = JSON.parse(localStorage.getItem('objJugador'));
         let desocultar = document.getElementById("tabla");
         let mostrar = document.getElementById("contTabla");
-        let arrOrdenado = claveUser.sort((a, b) => { 
-            if (a.score > b.score){
+        let arrOrdenado = claveUser.sort((a, b) => {
+            if (a.score > b.score) {
                 return -1;
-            }else if(a.score < b.score){
+            } else if (a.score < b.score) {
                 return 1;
-            }else{
+            } else {
                 return 0;
             }
         });
         desocultar.style = "display: inline-block";
         for (let i = 0; i <= arrOrdenado.length; i++) {
             let contentToHappend = `
-                <li>Nombre: <span>${arrOrdenado[i].nombre}</span> ,Puntuación: <span>${arrOrdenado[i].score}</span></li>`;
+                <li>Nombre: <span>${arrOrdenado[i].nombre}</span>  Puntuación: <span>${arrOrdenado[i].score}</span></li>`;
             mostrar.innerHTML += contentToHappend;
         };
     };

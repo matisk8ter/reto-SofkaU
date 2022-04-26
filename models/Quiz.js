@@ -13,6 +13,10 @@ export class Quiz {
     isEnded() {
         return this.questions.length === this.questionIndex || this.questionIndex === -1;
     }
+    finalizar() {
+        this.questions.length === this.questionIndex - 1
+    }
+
     validacion(respuesta) {
         console.log(respuesta);
         if (this.obtenerQuestionIndex().respuestaCorrecta(respuesta)) {

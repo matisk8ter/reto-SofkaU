@@ -11,10 +11,10 @@ const renderPage = (quiz, ui) => {
 
     if (quiz.isEnded()) {
         ui.mostrarScore(quiz.score);
-        const scoreP = quiz.score;
+        let scoreP = quiz.score;
         if (quiz.score > 0) {
-            const nombre = prompt();
-            const datosJugador = new Jugador(nombre, scoreP);
+            let nombre = prompt();
+            let datosJugador = new Jugador(nombre, scoreP);
             datosJugador.guardarDatos();
             ui.mostrarTabla();
         }
@@ -24,15 +24,32 @@ const renderPage = (quiz, ui) => {
             quiz.validacion(currentChoice);
             renderPage(quiz, ui);
         });
+        ui.puntos(quiz.score);
+        ui.mostrarNivel(quiz.questionIndex + 1);
 
     }
 };
+
+document.getElementById("salir").addEventListener("click", () => {
+    let puntosActuales = document.getElementById("scoreActual").innerHTML;
+    let score = parseInt(puntosActuales);
+    if (puntosActuales > 0) {
+        let nombre = prompt("coloque su nombre");
+        let datosJugador = new Jugador(nombre, puntosActuales);
+        datosJugador.guardarDatos();
+        const ui = new UI();
+        ui.mostrarScore(score);
+        ui.mostrarTabla(); 
+    }
+    
+    console.log(scoreString)
+});
+
 function main() {
     const dataRandom = arregloRandom();
     const quiz = new Quiz(dataRandom);
     const ui = new UI();
     renderPage(quiz, ui);
-
 }
 
 main();

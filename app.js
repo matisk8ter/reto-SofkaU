@@ -25,7 +25,7 @@ const renderPage = (quiz, ui) => {
             renderPage(quiz, ui);
         });
         ui.puntos(quiz.score);
-        ui.mostrarNivel(quiz.questionIndex + 1);
+        ui.mostrarNivel(quiz.questionIndex);
 
     }
 };
@@ -41,8 +41,6 @@ document.getElementById("salir").addEventListener("click", () => {
         ui.mostrarScore(score);
         ui.mostrarTabla(); 
     }
-    
-    console.log(scoreString)
 });
 
 function main() {

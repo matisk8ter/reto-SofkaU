@@ -15,15 +15,22 @@
 <body>
     <div class="mt-5">
         <div id="quiz" class="col-12">
-            <h1>Reto SofkaU</h1>
+            <div class="log"></div>
+            <h1><span>Reto </span> Sofka<b>U</b></h1>
             <p id="progress"></p>
-            <p>puntos actuales</p>
-            <p id="scoreActual"></p>
+            <ul class="tb">
+                <li>
+                    <p>puntos actuales</p>
+                </li>
+                <li>
+                    <p id="scoreActual"></p>
+                </li>
+            </ul>
             <div id="puntos"></div>
             <hr>
             <h2 id="question"></h2>
             <div id="choices"></div>
-            <button id="salir" >Salir</button>
+            <button class="btn btn-danger" id="salir">Salir</button>
         </div>
         <div id="tabla" style="display: none;" class="col-12">
             <h2>Tabla de Clasificación</h2>

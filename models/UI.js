@@ -22,19 +22,28 @@ export class UI {
 
     }
     mostrarNivel(nivel) {
-        document.getElementById("progress").innerHTML = `nivel de dificultad: ${nivel}`
+        let contNivel = document.getElementById("progress");
+        switch (nivel) {
+            case 0: contNivel.innerHTML = `Nivel: <b>Principiante</b>`
+                break;
+            case 1: contNivel.innerHTML = `Nivel: <b>Facil</b>`
+                break;
+            case 2: contNivel.innerHTML = `Nivel: <b>Dificil</b>`
+                break;
+            case 3: contNivel.innerHTML = `Nivel: <b>Avanzado</b>`
+                break;
+            case 4: contNivel.innerHTML = `Nivel: <b>Experto</b>`
+                break;
+        }
     }
     puntos(score) {
         document.getElementById("scoreActual").innerHTML = score;
     }
-
-    
-
     mostrarScore(score) {
         const quizEndHTML = `
             <h1>Resultado</h1>
             <h2>Tu Score: ${score}</h2>
-            <button onclick="location.href='https://matisk8ter.github.io/reto-SofkaU/'">Volver a Jugar</button>
+            <button class="btn btn-primary" onclick="location.href='https://matisk8ter.github.io/reto-SofkaU/'">Volver a Jugar</button>
         `
         const element = document.getElementById('quiz');
         element.innerHTML = quizEndHTML;

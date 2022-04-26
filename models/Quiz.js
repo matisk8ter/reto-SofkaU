@@ -37,6 +37,7 @@ export class Quiz {
             }
         } else {
             this.questionIndex = -1;
+            swal("La respuesta no es correcta, Fin del juego!");
         }   
     }
 } 

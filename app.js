@@ -12,7 +12,7 @@ const renderPage = (quiz, ui) => {
     if (quiz.isEnded()) {
         ui.mostrarScore(quiz.score);
         let scoreP = quiz.score;
-        swal("La respuesta no es correcta, Fin del juego!")
+        
         if (quiz.score > 0) {
             let nombre = prompt();
             let datosJugador = new Jugador(nombre, scoreP);
